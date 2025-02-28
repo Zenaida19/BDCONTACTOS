@@ -46,4 +46,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("androidx.sqlite:sqlite-ktx:2.2.0")
+    implementation ("com.google.android.material:material:1.9.0")
+
 }
