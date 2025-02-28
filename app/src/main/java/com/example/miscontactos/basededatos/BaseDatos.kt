@@ -5,8 +5,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.Cursor
 import android.content.ContentValues
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.miscontactos.MainActivity
 
-// Definimos la clase BaseDatos que extiende SQLiteOpenHelper
+// Definimos la clase DBHelper que extiende SQLiteOpenHelper
 class BaseDatos(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     // Definimos las constantes para el nombre de la base de datos, la versión y las columnas
