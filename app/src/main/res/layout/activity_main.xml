@@ -8,9 +8,11 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="261dp"
-        android:layout_height="55dp"
-        android:text="Hello World!"
+        android:layout_width="439dp"
+        android:layout_height="35dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#039BE5"
+        android:text="CONTACTOS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.006"
@@ -23,25 +25,70 @@
         android:layout_width="359dp"
         android:layout_height="63dp"
         android:ems="10"
+        android:hint="Ingresa el nombre"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="26dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104" />
 
     <EditText
         android:id="@+id/editTextText2"
         android:layout_width="355dp"
         android:layout_height="67dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="114dp" />
+        android:hint="Ingresa el numero"
+        android:inputType="number|numberDecimal|numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/listView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.252" />
 
     <ListView
-        android:layout_width="409dp"
-        android:layout_height="357dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="376dp" />
+        android:id="@+id/listView"
+        android:layout_width="372dp"
+        android:layout_height="230dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar Nuevo Contacto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="guardar contacto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="eliminar contacto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
