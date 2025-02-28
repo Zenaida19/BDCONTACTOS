@@ -1,31 +1,44 @@
 package com.example.miscontactos
 
 import android.os.Bundle
-import android.provider.ContactsContract.DeletedContacts
-import androidx.activity.enableEdgeToEdge
+import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.miscontactos.basededatos.BaseDatos
+import com.example.miscontactos.MainActivity.C
+import com.example.miscontactos.basededatos.Contact
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var editTextName: editTextText
-    private lateinit var editTextPhone: EditTextText2
+    private lateinit var editTextName: EditText
+    private lateinit var editTextPhone: EditText
     private lateinit var listView: ListView
     private lateinit var buttonRegister: Button
-    private lateinit var buttonSave: Button2
-    private lateinit var buttonDeletedContacts: DeletedContacts: Button3
-    private lateinit var dbHelper: DBHelper
+    private lateinit var buttonSave: Button
+    private lateinit var buttonDelete: Button
+    private lateinit var dbHelper: BaseDatos
     private lateinit var contactList: MutableList<Contact>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        // Inicializamos los componentes de la UI
+        editTextName = findViewById(R.id.editTextText) // Nombre
+        editTextPhone = findViewById(R.id.editTextText2) // Número
+        listView = findViewById(R.id.listView)
+        buttonRegister = findViewById(R.id.button) // Registrar
+        buttonSave = findViewById(R.id.button2) // Guardar
+        buttonDelete = findViewById(R.id.button3) // Eliminar
+
+        dbHelper = BaseDatos(this)
+        contactList = mutableListOf()
+
+        // Cargar los contactos cuando se inicia la aplicación
+        Contact()
     }
 }
